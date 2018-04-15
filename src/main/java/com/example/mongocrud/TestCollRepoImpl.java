@@ -16,6 +16,9 @@ public class TestCollRepoImpl implements TestCollRepoCustom{
 	ApplicationContext ctx = new AnnotationConfigApplicationContext(MongoConfig.class);
     MongoOperations mongoOperation = (MongoOperations)ctx.getBean("mongoTemplate");
     
+    /**
+     * 
+     */
     public List<TestColl> tst() {
     	Query query = new Query();
 		query.addCriteria(Criteria.where("data").is("lookingForMe"));
